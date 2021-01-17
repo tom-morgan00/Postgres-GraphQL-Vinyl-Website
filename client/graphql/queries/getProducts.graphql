@@ -1,0 +1,29 @@
+import { gql } from '@apollo/client';
+
+export const GET_PRODUCTS = gql`
+  query GetProducts {
+    getProducts {
+      id
+      title
+      artist
+      image
+      price
+    }
+  }
+`;
+
+
+export const GET_PRODUCT = gql`
+  query GetProduct($id: ID!) {
+    getProduct(id: $id) {
+      id
+      title
+      artist
+      image
+      price
+      release_date
+      label
+      tracklist
+    }
+  }
+`;

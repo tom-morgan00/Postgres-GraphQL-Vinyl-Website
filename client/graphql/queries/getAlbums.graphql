@@ -1,0 +1,13 @@
+import { gql } from '@apollo/client'
+
+export const GET_RECOMMENDED_ALBUMS = gql`
+  query GetRecommendedAlbums {
+    getRecommendedAlbums {
+      id
+      title
+      artist
+      image
+      price
+    }
+  }
+`

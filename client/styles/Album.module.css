@@ -1,0 +1,86 @@
+.albumSection {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url('https://images.unsplash.com/photo-1546707012-0c9f63ba29b9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px 10px;
+}
+
+.title {
+  padding: 30px;
+  font-size: 3.5rem;
+  text-align: center;
+  background-color: var(--dark);
+  border: 2px solid var(--lightBlue);
+  color: var(--lightBlue);
+  margin: 0 auto 50px;
+  width: 50%;
+}
+
+.albums {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: white;
+  font-size: 2rem;
+  line-height: 160%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.album {
+  background-color: rgb(15, 15, 15);
+  flex: 1 0 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.album:nth-of-type(3n),
+.album:nth-child(2),
+.album:nth-child(7) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.albumImage {
+  width: 50%;
+}
+.albumImage img {
+  width: 100%;
+  padding: 20px;
+}
+.albumImage img:hover {
+  filter: brightness(70%);
+  cursor: pointer;
+}
+
+.albumInfo {
+  width: 50%;
+  padding: 10px;
+}
+
+.button {
+  margin-top: 10px;
+}
+
+.button button {
+  padding: 10px;
+  font-size: 1.6rem;
+  outline: none;
+  border: 1px solid black;
+  background-color: var(--lightBlue);
+  font-weight: 700;
+  color: white;
+}
+
+.button button:hover {
+  cursor: pointer;
+  background-color: var(--green);
+  color: black;
+}

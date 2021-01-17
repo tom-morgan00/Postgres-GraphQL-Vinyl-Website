@@ -1,0 +1,100 @@
+.artistSection {
+  background-color: var(--lightBlue);
+  padding: 50px 10px;
+}
+
+.title {
+  padding: 30px;
+  font-size: 3.5rem;
+  text-align: center;
+  background-color: var(--dark);
+  border: 2px solid var(--light);
+  color: var(--lightBlue);
+  margin: 0 auto 50px;
+  width: 50%;
+}
+
+.artist {
+  color: white;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--dark);
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+
+.artist:nth-of-type(2n) {
+  flex-direction: row-reverse;
+}
+
+.artistImage {
+  padding: 10px;
+  flex: 2 0;
+}
+
+.artistImage img {
+  width: 100%;
+}
+
+.artistInfo {
+  flex: 3 0;
+  padding: 10px;
+}
+
+.artistInfo ul {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.artistAlbums {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.artistAlbum {
+  flex: 1 0 30%;
+  padding: 15px;
+}
+
+.artistAlbumImage img {
+  width: 100%;
+}
+
+.artistAlbumImage img:hover,
+.artistImage img:hover {
+  cursor: pointer;
+  filter: brightness(70%);
+}
+
+@media screen and (max-width: 768px) {
+  .artist,
+  .artist:nth-of-type(2n) {
+    flex-direction: column;
+    font-size: 1.3rem;
+    padding: 5px;
+  }
+
+  .artistInfo ul {
+    font-size: 1.2rem;
+    justify-content: flex-start;
+  }
+  .artistInfo ul li {
+    margin-right: 20px;
+  }
+
+  .artistAlbum {
+    flex: 1 0 40%;
+    max-width: 50%;
+    padding: 5px;
+  }
+  .title {
+    font-size: 2.4rem;
+    width: 100%;
+  }
+}

@@ -1,0 +1,32 @@
+import { gql } from '@apollo/client';
+
+export const GET_ARTISTS = gql`
+  query GetArtists {
+    id
+    name
+    members
+    place_of_origin
+    photo
+    year_formed
+  }
+`
+
+export const GET_FAVOURITE_ARTISTS = gql`
+  query GetFavouriteArtists {
+    getFavouriteArtists {
+      artist {
+      id
+    name
+    members
+    place_of_origin
+    photo
+    year_formed
+    }
+    albums {
+      id
+      title
+      image
+    }
+    }
+  }
+`
