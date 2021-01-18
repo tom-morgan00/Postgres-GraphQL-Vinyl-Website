@@ -16,16 +16,20 @@
   background-color: var(--dark);
   color: var(--light);
   font-size: 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  margin-bottom: 80px;
 }
 
 .navMenu {
   display: none;
-  padding: 10px;
+  padding: 20px;
 }
 
 .navLink {
   display: inline-block;
-  padding: 10px;
+  padding: 20px;
 }
 
 .navLink:hover {
@@ -56,17 +60,17 @@
     border-top: 1px solid rgb(110, 110, 110);
     display: block;
     width: 100%;
-    padding: 15%;
-    font-size: 3rem;
+    padding: 20px;
+    font-size: 2rem;
     text-align: center;
   }
   .navLinks {
     transform: translateX(100%);
     position: absolute;
-    top: 58px;
+    top: 78px;
     right: 0;
     width: 50%;
-    height: 100%;
+    height: 100vh;
     flex-direction: column;
     z-index: 2;
     background-color: var(--dark);
@@ -92,14 +96,15 @@
   background-position: center;
   background-size: cover;
   min-height: 300px;
-  height: 60vh;
+  height: 100vh;
   color: var(--light);
   position: relative;
 }
 
 .hero div {
   position: absolute;
-  bottom: 0;
+
+  bottom: 10%;
   left: 15%;
   padding: 30px;
 }
@@ -110,4 +115,15 @@
   color: var(--lightBlue);
   text-align: center;
   padding: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+  .hero div {
+    left: 0%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero div {
+    font-size: 2.8rem;
+  }
 }

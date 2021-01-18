@@ -16,7 +16,6 @@ const ProductResolver = {
         .select('album.*', 'artist.name as artist')
         .whereRaw('album.id = ?', [id]);
 
-      console.log(product);
       return !!product ? product : new Error('product not found');
     },
     getProductsByArtist: async (_, { id }) => {
@@ -33,7 +32,14 @@ const ProductResolver = {
         .select('album.*', 'artist.name as artist')
         .whereRaw('album.recommended = TRUE');
 
-      console.log(albums);
+      return albums;
+    },
+    getProductsOrderBy: async (_, { column, order }) => {
+      const albums = await knex('album')
+        .join('artist', 'artist.id', 'album.artist_id')
+        .select('album.*', 'artist.name as artist')
+        .orderByRaw(`${column ? column : 'id'} ${order ? order : 'ASC'}`);
+
       return albums;
     },
   },

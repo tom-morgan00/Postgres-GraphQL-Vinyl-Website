@@ -39,6 +39,8 @@ const typeDefs = gql`
     getArtist(id: ID!): Artist
     getFavouriteArtists: [Both]
     getRecommendedAlbums: [Product]
+    getProductsOrderBy(column: String, order: String): [Product]
+    getArtistsAndAlbums: [Both]
   }
 `;
 

@@ -9,11 +9,6 @@ import Albums from '../components/Albums/Albums';
 export default function Home() {
   return (
     <div className={classes.app}>
-      <Head>
-        <title>Tom's Vinyl</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Layout>
         <main className={classes.main}>
           <Hero />

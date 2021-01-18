@@ -27,3 +27,19 @@ export const GET_PRODUCT = gql`
     }
   }
 `;
+
+
+export const GET_PRODUCTS_ORDER_BY = gql`
+  query GetProductsOrderBy($column: String, $order: String) {
+    getProductsOrderBy(column: $column, order: $order) {
+      id
+      title
+      artist
+      image
+      price
+      release_date
+      label
+      tracklist
+    }
+  }
+`;

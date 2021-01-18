@@ -1,9 +1,26 @@
-.products {
-  display: flex;
-  flex-wrap: wrap;
+.app {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.main {
+  padding-top: 78px;
   margin: 0 auto;
   width: 80%;
   max-width: 1200px;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 30px 20px 0 30px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .product {
@@ -21,4 +38,25 @@
 
 .productImage img {
   width: 100%;
+}
+.productImage img:hover {
+  cursor: pointer;
+  filter: brightness(80%);
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product {
+    flex: 1 0 40%;
+    max-width: 300px;
+  }
+}
+
+.select {
+  outline: none;
 }

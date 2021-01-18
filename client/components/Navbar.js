@@ -13,9 +13,11 @@ export default function Navbar() {
   return (
     <header className={classes.navbar}>
       <div className={classes.navContainer}>
-        <div className={`${classes.brand} ${classes.navLink}`}>
-          Tom's Vinyl <FontAwesomeIcon icon={faCompactDisc} />
-        </div>
+        <NextLink href="/">
+          <div className={`${classes.brand} ${classes.navLink}`}>
+            Tom's Vinyl <FontAwesomeIcon icon={faCompactDisc} />
+          </div>
+        </NextLink>
 
         <div className={classes.navMenu} onClick={() => setToggle(!toggle)}>
           {toggle ? (
@@ -29,8 +31,11 @@ export default function Navbar() {
           <NextLink href="/artists">
             <div className={classes.navLink}>Artists</div>
           </NextLink>
-          <NextLink href="/albums">
-            <div className={classes.navLink}>Albums</div>
+          <NextLink href="/products">
+            <div className={classes.navLink}>Products</div>
+          </NextLink>
+          <NextLink href="/cart">
+            <div className={classes.navLink}>Cart</div>
           </NextLink>
           <NextLink href="/login">
             <div className={classes.navLink}>Login</div>

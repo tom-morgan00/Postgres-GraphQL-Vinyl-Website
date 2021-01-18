@@ -1,6 +1,6 @@
 .artistSection {
   background-color: var(--lightBlue);
-  padding: 50px 10px;
+  padding: 100px 10px 50px;
 }
 
 .title {
@@ -78,6 +78,17 @@
     flex-direction: column;
     font-size: 1.3rem;
     padding: 5px;
+  }
+
+  .artistImage {
+    text-align: center;
+  }
+  .artistImage img {
+    width: 80%;
+  }
+
+  .artistAlbumImage img {
+    width: 80%;
   }
 
   .artistInfo ul {

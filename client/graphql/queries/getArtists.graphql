@@ -30,3 +30,23 @@ export const GET_FAVOURITE_ARTISTS = gql`
     }
   }
 `
+
+export const GET_ARTISTS_AND_ALBUMS = gql`
+  query GetArtistsAndAlbums {
+    getArtistsAndAlbums {
+      artist {
+      id
+    name
+    members
+    place_of_origin
+    photo
+    year_formed
+    }
+    albums {
+      id
+      title
+      image
+    }
+    }
+  }
+`

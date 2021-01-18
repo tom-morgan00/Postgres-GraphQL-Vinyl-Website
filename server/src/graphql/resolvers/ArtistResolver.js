@@ -37,6 +37,26 @@ const ArtistResolver = {
       // console.log(artists);
       return both;
     },
+    getArtistsAndAlbums: async () => {
+      const artists = await knex('artist').select('*');
+
+      const both = artists.map((artist) => {
+        return (async ({ id }) => {
+          let albums = await knex('album')
+            .select('id', 'title', 'image')
+            .whereRaw('album.artist_id = ?', [id])
+            .limit(3);
+
+          return {
+            artist,
+            albums,
+          };
+        })(artist);
+      });
+
+      // console.log(artists);
+      return both;
+    },
   },
 };
 
