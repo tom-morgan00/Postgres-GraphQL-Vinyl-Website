@@ -93,13 +93,11 @@
 
   .artistInfo ul {
     font-size: 1.2rem;
-    justify-content: flex-start;
-  }
-  .artistInfo ul li {
-    margin-right: 20px;
+    justify-content: space-around;
   }
 
   .artistAlbum {
+    text-align: center;
     flex: 1 0 40%;
     max-width: 50%;
     padding: 5px;

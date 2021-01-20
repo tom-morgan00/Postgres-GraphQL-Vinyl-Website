@@ -13,7 +13,7 @@
 .banner {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   padding: 30px 20px 0 30px;
 }
 
@@ -25,6 +25,7 @@
 
 .product {
   flex: 1 0 21%;
+  max-width: calc(25% - 10px);
   margin: 5px;
   padding: 10px;
   background-color: white;
@@ -52,11 +53,23 @@
 
 @media screen and (max-width: 768px) {
   .product {
-    flex: 1 0 40%;
-    max-width: 300px;
+    flex: 1 1 30%;
+    max-width: calc(33% - 10px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .product {
+    flex: 1 1 45%;
+    max-width: calc(50% - 10px);
   }
 }
 
 .select {
   outline: none;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
 }

@@ -127,3 +127,46 @@
     font-size: 2.8rem;
   }
 }
+
+.pagination {
+  width: 100%;
+  padding: 25px 50px;
+  position: relative;
+}
+
+.prev {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+.next {
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+.pageButton button {
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: var(--dark);
+  color: white;
+}
+
+.pageButton button:hover {
+  cursor: pointer;
+  background-color: var(--lightBlue);
+  color: white;
+}
+
+.pageNumber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.4rem;
+}

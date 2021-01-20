@@ -1,28 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from '../styles/Product.module.css';
 
-export default function Filters({ setOrder, setColumn }) {
-  const state = {
-    column: ['artist', 'title', 'price', 'release_date'],
-    order: ['ASC', 'DESC'],
-  };
+export default function Filters({ setSelectOptions, selected }) {
+  const options = [
+    { value: 'Filters' },
+    { column: 'artist', order: 'ASC', value: 'Artist: A-Z' },
+    { column: 'artist', order: 'DESC', value: 'Artist: Z-A' },
+    { column: 'title', order: 'ASC', value: 'Title: A-Z' },
+    { column: 'title', order: 'DESC', value: 'Title: Z-A' },
+    { column: 'price', order: 'ASC', value: 'Price: Lowest' },
+    { column: 'price', order: 'DESC', value: 'Price: Highest' },
+    { column: 'release_date', order: 'ASC', value: 'Oldest' },
+    { column: 'release_date', order: 'DESC', value: 'Newest' },
+  ];
+
   return (
     <div className={classes.filters}>
-      <span>Sort by: </span>
+      <span>
+        Sorted by <strong>{options[selected].value}</strong>{' '}
+      </span>
       <select
+        value={''}
         onChange={(e) => {
-          setColumn(state.column[e.target.value[0]]);
-          setOrder(state.order[e.target.value[1]]);
+          setSelectOptions(
+            options[e.target.value].column,
+            options[e.target.value].order,
+            e.target.value
+          );
         }}
       >
-        <option value="00">Artist: A-Z</option>
-        <option value="01">Artist: Z-A</option>
-        <option value="10">Title: A-Z</option>
-        <option value="11">Title: Z-A</option>
-        <option value="20">Price: Lowest</option>
-        <option value="21">Price: Highest</option>
-        <option value="30">Oldest</option>
-        <option value="31">Newest</option>
+        {options.map((opt, index) => (
+          <option value={index}>{opt.value}</option>
+        ))}
       </select>
     </div>
   );
