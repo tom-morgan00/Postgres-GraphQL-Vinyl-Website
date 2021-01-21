@@ -13,17 +13,24 @@ export const GET_PRODUCTS = gql`
 `;
 
 
-export const GET_PRODUCT = gql`
-  query GetProduct($id: ID!) {
-    getProduct(id: $id) {
-      id
-      title
-      artist
-      image
-      price
-      release_date
-      label
-      tracklist
+export const GET_PRODUCT_BY_ID = gql`
+  query GetProductByID($id: ID!) {
+    getProductByID(id: $id) {
+      product {
+        id
+        artist
+        title
+        price
+        image
+        label
+        tracklist
+      }
+      relatedAlbums {
+        id
+        title
+        image
+        price
+      }
     }
   }
 `;

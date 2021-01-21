@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from '../styles/Product.module.css';
+import classes from '../styles/components/Others.module.css';
 
 export default function Filters({ setSelectOptions, selected }) {
   const options = [

@@ -50,3 +50,25 @@ export const GET_ARTISTS_AND_ALBUMS = gql`
     }
   }
 `
+
+export const GET_ARTIST_BY_ID = gql`
+  query GetArtistByID($id: ID!) {
+    getArtistByID(id: $id) {
+      artist {
+      id
+    name
+    members
+    place_of_origin
+    photo
+    year_formed
+    }
+    albums {
+      id
+      title
+      image
+      release_date
+      price
+    }
+    }
+  }
+`

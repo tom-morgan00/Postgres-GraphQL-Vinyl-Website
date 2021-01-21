@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import classes from '../styles/Components.module.css';
+import classes from '../styles/components/Navbar.module.css';
 import NextLink from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the FontAwesomeIcon component
 import {

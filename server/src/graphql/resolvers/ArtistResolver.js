@@ -9,11 +9,15 @@ const ArtistResolver = {
       return artists;
     },
 
-    getArtist: async (_, { id }) => {
+    getArtistByID: async (_, { id }) => {
       const [artist] = await knex('artist').select('*').where({ id });
 
-      console.log(artist);
-      return !!artist ? artist : new Error('artist not found');
+      const albums = await knex('album')
+        .select('*')
+        .where({ artist_id: id })
+        .orderByRaw('release_date ASC');
+
+      return !!artist ? { artist, albums } : new Error('artist not found');
     },
     getFavouriteArtists: async () => {
       const artists = await knex('artist')

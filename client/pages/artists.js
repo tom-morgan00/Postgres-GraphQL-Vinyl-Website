@@ -37,7 +37,7 @@ export default function artists() {
                         <li>
                           <h4>Band Members</h4>
                           {artist.members.map((member) => (
-                            <p>{member}</p>
+                            <p key={member}>{member}</p>
                           ))}
                         </li>
                         <li>

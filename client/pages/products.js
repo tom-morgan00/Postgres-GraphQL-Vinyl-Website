@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_PRODUCTS_ORDER_BY } from '../graphql/queries/getProducts.graphql';
-import classes from '../styles/Product.module.css';
+import classes from '../styles/components/Others.module.css';
 import Layout from '../components/Layout';
 import Filters from '../components/Filters';
-import NextLink from 'next/link';
 import PaginationButtons from '../components/PaginationButtons';
+import Products from '../components/Products/Products';
 
 export default function albums() {
   const [selected, setSelected] = useState(1);
@@ -39,28 +39,16 @@ export default function albums() {
       <Layout>
         <main className={classes.main}>
           <div className={classes.banner}>
-            <h1 className={classes.title}>Products</h1>
+            <h1>Products</h1>
             <Filters setSelectOptions={setSelectOptions} selected={selected} />
           </div>
-          <section className={classes.products}>
-            {data &&
-              data.getProductsOrderBy
-                .map((prod) => {
-                  return (
-                    <div className={classes.product} key={prod.id}>
-                      <div className={classes.productImage}>
-                        <NextLink href={`/products/${prod.id}`}>
-                          <img src={prod.image} alt={prod.title} />
-                        </NextLink>
-                      </div>
-                      <h4>{prod.title}</h4>
-                      <p>{prod.artist}</p>
-                      <p>£{prod.price}</p>
-                    </div>
-                  );
-                })
-                .slice(index * limit, (index + 1) * limit)}
-          </section>
+          <Products
+            products={data.getProductsOrderBy.slice(
+              index * limit,
+              (index + 1) * limit
+            )}
+          />
+
           <PaginationButtons
             index={index}
             setIndex={setIndex}

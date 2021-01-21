@@ -18,6 +18,23 @@ const ProductResolver = {
 
       return !!product ? product : new Error('product not found');
     },
+    getProductByID: async (_, { id }) => {
+      const [product] = await knex('album')
+        .join('artist', 'artist.id', 'album.artist_id')
+        .select('album.*', 'artist.name as artist')
+        .whereRaw('album.id = ?', [id]);
+
+      const albums = await knex('album')
+        .select('*')
+        .where({ artist_id: product.artist_id })
+        .whereNot({ id })
+        .orderBy('release_date');
+
+      return {
+        product,
+        relatedAlbums: albums,
+      };
+    },
     getProductsByArtist: async (_, { id }) => {
       const products = await knex('album')
         .join('artist', 'artist.id', 'album.artist_id')

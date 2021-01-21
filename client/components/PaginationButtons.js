@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from '../styles/Components.module.css';
+import classes from '../styles/components/Pagination.module.css';
 
 export default function PaginationButtons({ index, setIndex, maxPages }) {
   const page = index + 1;

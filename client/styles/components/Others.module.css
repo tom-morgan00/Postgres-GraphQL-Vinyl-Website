@@ -1,0 +1,36 @@
+.select {
+  outline: none;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  padding-top: 78px;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1200px;
+}
+
+/* .title {
+  font-size: 3.2rem;
+  background-color: var(--dark);
+  color: var(--lightBlue);
+  text-align: center;
+  padding: 30px;
+} */
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px 0 30px;
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    width: 100%;
+  }
+}

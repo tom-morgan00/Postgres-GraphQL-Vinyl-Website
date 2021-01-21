@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
-import classes from '../../styles/Album.module.css';
+import classes from '../../styles/components/RecAlbums.module.css';
 import { GET_RECOMMENDED_ALBUMS } from '../../graphql/queries/getAlbums.graphql';
 import NextLink from 'next/link';
 

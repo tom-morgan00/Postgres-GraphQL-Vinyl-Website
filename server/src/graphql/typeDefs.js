@@ -30,13 +30,19 @@ const typeDefs = gql`
     albums: [Product]
   }
 
+  type AlbumAndRelated {
+    product: Product
+    relatedAlbums: [Product]
+  }
+
   type Query {
     hello: String
     getProducts: [Product]
     getProduct(id: ID!): Product
+    getProductByID(id: ID!): AlbumAndRelated
     getProductsByArtist(id: ID!): [Product]
     getArtists: [Artist]
-    getArtist(id: ID!): Artist
+    getArtistByID(id: ID!): Both
     getFavouriteArtists: [Both]
     getRecommendedAlbums: [Product]
     getProductsOrderBy(column: String, order: String): [Product]
